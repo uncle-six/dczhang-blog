@@ -3,6 +3,7 @@ import SmartLink from '@/components/SmartLink'
 /**
  * Logo
  * 实际值支持文字
+ * 这个代码是为了点击左上文字回到主页
  * @param {*} props
  * @returns
  */

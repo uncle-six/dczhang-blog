@@ -7,6 +7,10 @@ import { useEffect, useState } from 'react'
 import CONFIG from '../config'
 import NavButtonGroup from './NavButtonGroup'
 
+
+// 这段就是 hexo 主题首页的“全屏大图（Hero）”组件：上面一层显示你的站点标题、打字机欢迎语、导航按钮、向下滚动箭头；
+// 最底层用 LazyImage 把首页背景图铺满整屏。
+
 let wrapperTop = 0
 
 /**

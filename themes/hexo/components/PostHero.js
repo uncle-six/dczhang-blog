@@ -8,6 +8,7 @@ import TagItemMini from './TagItemMini'
 
 /**
  * 文章详情页的Hero块
+ * 文章详情页顶部的大图横幅（Hero / Header Cover），也就是你点进某篇文章后，最上面那块“背景图 + 黑色蒙层 + 分类/标题/时间/标签”的区域。
  */
 export default function PostHero({ post, siteInfo }) {
   const { locale, fullWidth } = useGlobal()
