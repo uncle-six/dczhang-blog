@@ -231,6 +231,23 @@ const Style = () => {
         scrollbar-width: thin;
         scrollbar-color: var(--theme-color) transparent;
       }
+
+      /* =========================
+       * APlayer：底部居中（固定播放器）
+       * ========================= */
+      #theme-hexo .aplayer.aplayer-fixed {
+        left: 50% !important;
+        right: auto !important;
+        bottom: 12px !important;
+        transform: translateX(-50%) !important;
+        z-index: 9999;
+      }
+
+      /* 防止小屏幕超出 */
+      #theme-hexo .aplayer.aplayer-fixed .aplayer-body {
+        width: min(520px, 92vw) !important;
+      }
+
     `}</style>
   )
 }
