@@ -234,7 +234,7 @@ const Style = () => {
 
       /* ===== APlayer 固定播放器：底部居中 ===== */
       .aplayer.aplayer-fixed {
-        left: 1% !important;
+        left: 50% !important;
         right: auto !important;
         bottom: 12px !important;
         transform: translateX(-50%) !important;
