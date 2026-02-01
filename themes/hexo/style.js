@@ -8,7 +8,7 @@ import CONFIG from './config'
  * @returns
  */
 const Style = () => {
-  // 从配置中获取主题色，如果没有配置则使用默认值 #928CEE
+  /* 从配置中获取主题色，如果没有配置则使用默认值 #928CEE */
   const themeColor = siteConfig('HEXO_THEME_COLOR', '#928CEE', CONFIG)
 
   return (
@@ -17,7 +17,7 @@ const Style = () => {
         --theme-color: ${themeColor};
       }
 
-      // 底色
+      /* 底色 */
       #theme-hexo body {
         background-color: #f5f5f5;
       }
@@ -117,7 +117,7 @@ const Style = () => {
         background-color: var(--theme-color) !important;
       }
 
-      // 移动设备菜单栏选中背景色
+      /* 移动设备菜单栏选中背景色 */
       #theme-hexo div[class*='hover:bg-indigo-500']:hover {
         background-color: var(--theme-color) !important;
       }
@@ -208,12 +208,12 @@ const Style = () => {
         opacity: 0;
       }
 
-      // 选中字体颜色
+      /* 选中字体颜色 */
       ::selection {
         background: color-mix(in srgb, var(--theme-color) 30%, transparent);
       }
 
-      // 自定义滚动条
+      /* 自定义滚动条 */
       ::-webkit-scrollbar {
         width: 5px;
         height: 5px;
@@ -244,46 +244,57 @@ const Style = () => {
       /* 控制播放器宽度：桌面不太宽，手机自适应 */
       .aplayer.aplayer-fixed .aplayer-body {
         width: min(520px, calc(100vw - 24px)) !important;
-        position: relative !important; /* 关键：让歌词 absolute 定位在播放器内部 */
+        height: auto !important;        /* 不撑高 */
+        padding-top: 0 !important;      /* 不留空白 */
+        position: relative !important;  /* 供歌词覆盖层定位 */
       }
 
-      /* 如果你不想它在极窄屏也居中（可选） */
+      /* 默认不显示歌词 */
+      .aplayer.aplayer-fixed .aplayer-lrc {
+        display: none !important;
+      }
+
+      /* 有 show-lrc 类时显示歌词：覆盖在播放器上方，不占布局高度 */
+      .aplayer.aplayer-fixed.show-lrc .aplayer-lrc {
+        display: block !important;
+        position: absolute !important;
+        left: 10px !important;
+        right: 10px !important;
+        top: -30px !important;
+        height: 22px !important;
+        line-height: 22px !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+
+        background: rgba(255, 255, 255, 0.6) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+        backdrop-filter: blur(6px) !important;
+        border-radius: 8px !important;
+        padding: 0 10px !important;
+      }
+
+      .aplayer.aplayer-fixed.show-lrc .aplayer-lrc p {
+        margin: 0 !important;
+        font-size: 12px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        opacity: 0.9 !important;
+      }
+
+      .dark .aplayer.aplayer-fixed.show-lrc .aplayer-lrc {
+        background: rgba(0, 0, 0, 0.6) !important;
+      }
+
+      .dark .aplayer.aplayer-fixed.show-lrc .aplayer-lrc p {
+        color: #fff !important;
+      }
+
       @media (max-width: 480px) {
         .aplayer.aplayer-fixed {
           bottom: 6px !important;
         }
-      }
-
-      /* ===== APlayer 悬浮模式：在悬浮框内显示歌词 ===== */
-      .aplayer.aplayer-fixed .aplayer-body {
-        padding-top: 26px !important;
-        height: 92px !important;
-      }
-
-      .aplayer.aplayer-fixed .aplayer-lrc {
-        display: block !important;
-        position: absolute !important;
-        top: 4px !important;
-        left: 10px !important;
-        right: 10px !important;
-        height: 20px !important;
-        line-height: 20px !important;
-        margin: 0 !important;
-        overflow: hidden !important;
-        pointer-events: none !important;
-      }
-
-      .aplayer.aplayer-fixed .aplayer-lrc p {
-        margin: 0 !important;
-        font-size: 12px !important;
-        opacity: 0.9 !important;
-        white-space: nowrap !important;
-        text-overflow: ellipsis !important;
-        overflow: hidden !important;
-      }
-
-      .dark .aplayer.aplayer-fixed .aplayer-lrc p {
-        color: white !important;
       }
 
     `}</style>
