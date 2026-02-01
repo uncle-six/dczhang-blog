@@ -234,9 +234,9 @@ const Style = () => {
 
       /* ===== APlayer 固定播放器：底部居中 ===== */
       .aplayer.aplayer-fixed {
-        left: 50% !important;
+        left: 1% !important;
         right: auto !important;
-        bottom: 12px !important;  /* 你想更贴底就改小，比如 0 或 6 */
+        bottom: 12px !important;
         transform: translateX(-50%) !important;
         z-index: 99999 !important;
       }
@@ -244,6 +244,7 @@ const Style = () => {
       /* 控制播放器宽度：桌面不太宽，手机自适应 */
       .aplayer.aplayer-fixed .aplayer-body {
         width: min(520px, calc(100vw - 24px)) !important;
+        position: relative !important; /* 关键：让歌词 absolute 定位在播放器内部 */
       }
 
       /* 如果你不想它在极窄屏也居中（可选） */
@@ -252,6 +253,39 @@ const Style = () => {
           bottom: 6px !important;
         }
       }
+
+      /* ===== APlayer 悬浮模式：在悬浮框内显示歌词 ===== */
+      .aplayer.aplayer-fixed .aplayer-body {
+        padding-top: 26px !important;
+        height: 92px !important;
+      }
+
+      .aplayer.aplayer-fixed .aplayer-lrc {
+        display: block !important;
+        position: absolute !important;
+        top: 4px !important;
+        left: 10px !important;
+        right: 10px !important;
+        height: 20px !important;
+        line-height: 20px !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+      }
+
+      .aplayer.aplayer-fixed .aplayer-lrc p {
+        margin: 0 !important;
+        font-size: 12px !important;
+        opacity: 0.9 !important;
+        white-space: nowrap !important;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
+      }
+
+      .dark .aplayer.aplayer-fixed .aplayer-lrc p {
+        color: white !important;
+      }
+
     `}</style>
   )
 }
