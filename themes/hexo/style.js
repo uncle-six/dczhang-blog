@@ -232,22 +232,26 @@ const Style = () => {
         scrollbar-color: var(--theme-color) transparent;
       }
 
-      /* =========================
-       * APlayer：底部居中（固定播放器）
-       * ========================= */
-      #theme-hexo .aplayer.aplayer-fixed {
+      /* ===== APlayer 固定播放器：底部居中 ===== */
+      .aplayer.aplayer-fixed {
         left: 50% !important;
         right: auto !important;
-        bottom: 12px !important;
+        bottom: 12px !important;  /* 你想更贴底就改小，比如 0 或 6 */
         transform: translateX(-50%) !important;
-        z-index: 9999;
+        z-index: 99999 !important;
       }
 
-      /* 防止小屏幕超出 */
-      #theme-hexo .aplayer.aplayer-fixed .aplayer-body {
-        width: min(520px, 92vw) !important;
+      /* 控制播放器宽度：桌面不太宽，手机自适应 */
+      .aplayer.aplayer-fixed .aplayer-body {
+        width: min(520px, calc(100vw - 24px)) !important;
       }
 
+      /* 如果你不想它在极窄屏也居中（可选） */
+      @media (max-width: 480px) {
+        .aplayer.aplayer-fixed {
+          bottom: 6px !important;
+        }
+      }
     `}</style>
   )
 }
