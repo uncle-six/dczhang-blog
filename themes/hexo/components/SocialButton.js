@@ -188,7 +188,7 @@ const SocialButton = () => {
             rel='noreferrer'
             title={'抖音'}
             href={CONTACT_DOUYIN}>
-            <i className='transform hover:scale-125 duration-150 fab fa-twitter dark:hover:text-indigo-400 hover:text-indigo-600' />
+            <i className='transform hover:scale-125 duration-150 fab fa-tiktok dark:hover:text-indigo-400 hover:text-indigo-600' />
           </a>
         )}
       </div>
