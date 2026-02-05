@@ -8,7 +8,7 @@ module.exports = {
       btoa(
         unescape(encodeURIComponent(process.env.NEXT_PUBLIC_CONTACT_EMAIL))
       )) ||
-    'dczhang01@gmail.com', // 邮箱地址 例如mail@tangly1024.com
+    'dczhang01@gmail.com', // 邮箱地址
   CONTACT_WEIBO: process.env.NEXT_PUBLIC_CONTACT_WEIBO || '', // 你的微博个人主页
   CONTACT_TWITTER: process.env.NEXT_PUBLIC_CONTACT_TWITTER || '', // 你的twitter个人主页
   CONTACT_GITHUB: process.env.NEXT_PUBLIC_CONTACT_GITHUB || 'https://github.com/uncle-six', // 你的github个人主页
@@ -19,6 +19,6 @@ module.exports = {
   CONTACT_YOUTUBE: process.env.NEXT_PUBLIC_CONTACT_YOUTUBE || '', // Youtube主页
   CONTACT_XIAOHONGSHU: process.env.NEXT_PUBLIC_CONTACT_XIAOHONGSHU || 'https://xhslink.com/m/2ihAQoyJYAp', // 小红书主页
   CONTACT_ZHISHIXINGQIU: process.env.NEXT_PUBLIC_CONTACT_ZHISHIXINGQIU || '', // 知识星球
-  CONTACT_WEHCHAT_PUBLIC: process.env.NEXT_PUBLIC_CONTACT_WEHCHAT_PUBLIC || '' // 微信公众号 格式：https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=【xxxxxx】==#wechat_redirect
-  // CONTACT_DOUYIN:process.env.NEXT_PUBLIC_CONTACT_DOUYIN || '' // 抖音主页
+  CONTACT_WEHCHAT_PUBLIC: process.env.NEXT_PUBLIC_CONTACT_WEHCHAT_PUBLIC || '' ,// 微信公众号 格式：https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=【xxxxxx】==#wechat_redirect
+  CONTACT_DOUYIN:process.env.NEXT_PUBLIC_CONTACT_DOUYIN || 'https://v.douyin.com/HAfhG0WpQ8Y' // 抖音主页
 }

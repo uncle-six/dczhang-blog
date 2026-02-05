@@ -25,6 +25,8 @@ const SocialButton = () => {
   const CONTACT_ZHISHIXINGQIU = siteConfig('CONTACT_ZHISHIXINGQIU')
   const CONTACT_WEHCHAT_PUBLIC = siteConfig('CONTACT_WEHCHAT_PUBLIC')
 
+  const CONTACT_DOUYIN = siteConfig('CONTACT_DOUYIN')
+
   const [qrCodeShow, setQrCodeShow] = useState(false)
 
   const openPopover = () => {
@@ -79,7 +81,7 @@ const SocialButton = () => {
           <a
             target='_blank'
             rel='noreferrer'
-            title={'weibo'}
+            title={'微博'}
             href={CONTACT_WEIBO}>
             <i className='transform hover:scale-125 duration-150 fab fa-weibo dark:hover:text-indigo-400 hover:text-indigo-600' />
           </a>
@@ -179,6 +181,15 @@ const SocialButton = () => {
               </div>
             </div>
           </button>
+        )}
+        {CONTACT_DOUYIN && (
+          <a
+            target='_blank'
+            rel='noreferrer'
+            title={'抖音'}
+            href={CONTACT_DOUYIN}>
+            <i className='transform hover:scale-125 duration-150 fab fa-douyin dark:hover:text-indigo-400 hover:text-indigo-600' />
+          </a>
         )}
       </div>
     </div>
