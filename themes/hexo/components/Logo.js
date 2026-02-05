@@ -35,7 +35,7 @@ const Logo = props => {
       <img
         src='/logo-dark.png'
         alt={siteInfo?.title || siteConfig('TITLE')}
-        className='h-10 w-10 hidden dark:block'
+        className='h-14 w-14 hidden dark:block'
       />
 
       <div className='font-medium text-lg rounded dark:border-white dark:text-white menu-link transform duration-200'>
