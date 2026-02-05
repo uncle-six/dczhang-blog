@@ -15,7 +15,8 @@ export default function Live2D() {
   const petSwitchTheme = siteConfig('WIDGET_PET_SWITCH_THEME')
 
   useEffect(() => {
-    if (showPet && !isMobile()) {
+    // if (showPet && !isMobile()) {
+    if (showPet) {
       Promise.all([
         loadExternalResource(
           'https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/live2d.min.js',
