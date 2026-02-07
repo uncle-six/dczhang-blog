@@ -57,6 +57,10 @@ export async function getStaticProps({ params: { prefix, slug }, locale }) {
     )
   })
 
+  if (!props.post || typeof props.post.id !== 'string') {
+    return { notFound: true }
+  }
+
   // 处理非列表内文章的内信息
   if (!props?.post) {
     const pageId = slug.slice(-1)[0]
