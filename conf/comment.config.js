@@ -18,8 +18,8 @@ module.exports = {
     process.env.NEXT_PUBLIC_COMMENT_ARTALK_CSS ||
     'https://cdnjs.cloudflare.com/ajax/libs/artalk/2.9.1/Artalk.css', 
 
-  // 确认这个配置也存在（如果你的模板支持的话）
-  COMMENT_ARTALK_SITE: 'Artalk',
+  // // 确认这个配置也存在（如果你的模板支持的话）
+  // COMMENT_ARTALK_SITE: 'Artalk',
 
   // twikoo
   COMMENT_TWIKOO_ENV_ID: process.env.NEXT_PUBLIC_COMMENT_ENV_ID || '', // TWIKOO后端地址 腾讯云环境填envId；Vercel环境填域名，教程：https://tangly1024.com/article/notionnext-twikoo
